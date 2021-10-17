@@ -28,14 +28,10 @@ var cfgFile string
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use:   "mock",
-	Short: "A brief description of your application",
-	Long: `A longer description that spans multiple lines and likely contains
-examples and usage of using your application. For example:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	Use:     "mock",
+	Short:   "simple mock server used for http-based api testing",
+	Long:    `mock is a command line tool that allows you to setup a simple but fine-grained HTTP-based API simulator.`,
+	Version: "myver0.1.8",
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
 	// Run: func(cmd *cobra.Command, args []string) { },
@@ -54,7 +50,7 @@ func init() {
 	// Cobra supports persistent flags, which, if defined here,
 	// will be global for your application.
 
-	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.mock.yaml)")
+	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is /.mock.yaml)")
 
 	// Cobra also supports local flags, which will only run
 	// when this action is called directly.
@@ -67,11 +63,11 @@ func initConfig() {
 		// Use config file from the flag.
 		viper.SetConfigFile(cfgFile)
 	} else {
-		// Find home directory.
-		home, err := os.UserHomeDir()
+		// Find working directory.
+		home, err := os.Getwd()
 		cobra.CheckErr(err)
 
-		// Search config in home directory with name ".mock" (without extension).
+		// Search config in working directory with name ".mock" (without extension).
 		viper.AddConfigPath(home)
 		viper.SetConfigType("yaml")
 		viper.SetConfigName(".mock")

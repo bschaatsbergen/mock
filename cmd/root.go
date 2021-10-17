@@ -29,8 +29,7 @@ var cfgFile string
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
 	Use:     "mock",
-	Short:   "simple mock server used for http-based api testing",
-	Long:    `mock is a command line tool that allows you to setup a simple but fine-grained HTTP-based API simulator.`,
+	Long:    `👷 mock is a simple cli app to simulate HTTP-based APIs.`,
 	Version: "0.0.1-experimental",
 }
 

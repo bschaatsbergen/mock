@@ -31,7 +31,7 @@ var rootCmd = &cobra.Command{
 	Use:     "mock",
 	Short:   "simple mock server used for http-based api testing",
 	Long:    `mock is a command line tool that allows you to setup a simple but fine-grained HTTP-based API simulator.`,
-	Version: "myver0.1.8",
+	Version: "0.0.1-experimental",
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
 	// Run: func(cmd *cobra.Command, args []string) { },

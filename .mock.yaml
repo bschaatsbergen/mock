@@ -1,0 +1,19 @@
+# Example .mock.yaml config
+endpoints:
+  - resource: /city/albuquerque
+    method: GET
+    statuscode: 200
+
+  - resource: /city
+    method: POST
+    body: { "Name": "Albuquerque", "Population": 559,374, "State": "New Mexico" }
+    statuscode: 201
+
+  - resource: /city/Albuquerque
+    method: PUT
+    body: { "Population": 601,255 }
+    statuscode: 204
+
+  - resource: /city/Albuquerque
+    method: DELETE
+    statuscode: 204

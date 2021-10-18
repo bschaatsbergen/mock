@@ -25,5 +25,5 @@ func init() {
 }
 
 func Serve() {
-	utils.ReadConfig(cfgFile)
+	utils.ReadMockConfig(cfgFile)
 }

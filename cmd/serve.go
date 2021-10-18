@@ -28,27 +28,19 @@ var cfgFile string
 // serveCmd represents the serve command
 var serveCmd = &cobra.Command{
 	Use:   "serve",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command.`,
+	Short: "initializes the mock process by parsing the '.mock.yaml'",
+	Long: `📡 initializes the mock process by parsing the '.mock.yaml'. 
+The mock config can be passed by using the '-c' flag, otherwise by default from the current working directory.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("init called")
+		Exec()
 	},
 }
 
 func init() {
 	rootCmd.AddCommand(serveCmd)
-	serveCmd.Flags().StringVarP(&cfgFile, "config", "c", ".mock.yaml", "specifies the config file")
+	serveCmd.Flags().StringVarP(&cfgFile, "config", "c", "", "specifies the config file (defaults to '.mock.yaml'")
 
-	// Here you will define your flags and configuration settings.
-
-	// Cobra supports Persistent Flags which will work for this command
-	// and all subcommands, e.g.:
-	// serveCmd.PersistentFlags().String("foo", "", "A help for foo")
-
-	// Cobra supports local flags which will only run when this command
-	// is called directly, e.g.:
-	// serveCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+	cobra.OnInitialize(initConfig)
 }
 
 // initConfig reads in config file and ENV variables if set.
@@ -57,20 +49,25 @@ func initConfig() {
 		// Use config file from the flag.
 		viper.SetConfigFile(cfgFile)
 	} else {
-		// Find working directory.
-		home, err := os.Getwd()
+		wd, err := os.Getwd()
 		cobra.CheckErr(err)
 
 		// Search config in working directory with name ".mock" (without extension).
-		viper.AddConfigPath(home)
+		viper.AddConfigPath(wd)
 		viper.SetConfigType("yaml")
-		viper.SetConfigName(".mock")
+		viper.SetConfigFile(".mock.yaml")
 	}
 
-	viper.AutomaticEnv() // read in environment variables that match
+	viper.AutomaticEnv()
 
-	// If a config file is found, read it in.
 	if err := viper.ReadInConfig(); err == nil {
-		fmt.Fprintln(os.Stderr, "Using config file:", viper.ConfigFileUsed())
+		fmt.Println("📝 Using config file:", viper.ConfigFileUsed())
+	} else {
+		fmt.Println(err)
+		os.Exit(1)
 	}
+}
+
+func Exec() {
+	fmt.Println("Foo")
 }

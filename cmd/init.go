@@ -17,9 +17,35 @@ package cmd
 
 import (
 	"fmt"
+	"io/ioutil"
+	"os"
 
 	"github.com/spf13/cobra"
 )
+
+const mockFileName = ".mock.yaml"
+
+var conf = `# Example .mock.yaml config
+endpoints:
+  - resource: /city/1
+    method: GET
+    body: { "Id": 1, "Name": "Albuquerque", "Population": 559,374, "State": "New Mexico" }
+    statuscode: 200
+
+  - resource: /city
+    method: POST
+    body: { "Name": "Albuquerque", "Population": 559,374, "State": "New Mexico" }
+    statuscode: 200
+
+  - resource: /city/1
+    method: PUT
+    body: { "Population": 601,255 }
+    statuscode: 204
+
+  - resource: /city/1
+    method: DELETE
+    statuscode: 204
+`
 
 // initCmd represents the init command
 var initCmd = &cobra.Command{
@@ -27,10 +53,24 @@ var initCmd = &cobra.Command{
 	Short: "generates a '.mock.yaml' in the current working directory.",
 	Long:  `📝 generates a '.mock.yaml' in the current working directory, use the flags to orchestrate the generation.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("init called")
+		GenerateMockConfig()
 	},
 }
 
 func init() {
 	rootCmd.AddCommand(initCmd)
+}
+
+func GenerateMockConfig() {
+	dir, _ := os.Getwd()
+	if _, err := os.Stat(mockFileName); os.IsNotExist(err) {
+		err := ioutil.WriteFile(mockFileName, []byte(conf), 0755)
+		if err != nil {
+			fmt.Printf("Unable to write file: %v", err)
+		} else {
+			fmt.Printf("🎉 Generated '.mock.yaml' in: %v\n", dir)
+		}
+	} else {
+		fmt.Printf("'.mock.yaml' file already exists in: %v\n", dir)
+	}
 }

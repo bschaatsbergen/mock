@@ -39,8 +39,6 @@ The mock config can be passed by using the '-c' flag, otherwise by default from 
 func init() {
 	rootCmd.AddCommand(serveCmd)
 	serveCmd.Flags().StringVarP(&cfgFile, "config", "c", "", "specifies the config file (defaults to '.mock.yaml'")
-
-	cobra.OnInitialize(initConfig)
 }
 
 // initConfig reads in config file and ENV variables if set.

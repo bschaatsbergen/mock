@@ -13,13 +13,13 @@ limitations under the License.
 package model
 
 type Config struct {
-	Endpoints []Endpoints `yaml:"endpoints"`
+	Endpoints []Endpoints `yaml:"Endpoints"`
 }
 
 // Endpoints
 type Endpoints struct {
-	Method     string `yaml:"method"`
-	Statuscode int    `yaml:"statuscode"`
-	Resource   string `yaml:"resource"`
-	Body       string `yaml:"body"`
+	Method     string `yaml:"Method"`
+	Statuscode int    `yaml:"StatusCode"`
+	Resource   string `yaml:"Resource"`
+	Body       string `yaml:"Body"`
 }

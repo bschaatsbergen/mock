@@ -26,25 +26,25 @@ import (
 const mockFileName = ".mock.yaml"
 
 var conf = `# Example .mock.yaml config
-endpoints:
-  - resource: /city/1
-    method: GET
-    body: { "Id": 1, "Name": "Albuquerque", "Population": 559,374, "State": "New Mexico" }
-    statuscode: 200
+Endpoints:
+  - Resource: /city/1
+    Method: GET
+    Body: { "Id": 1, "Name": "Albuquerque", "Population": 559,374, "State": "New Mexico" }
+    StatusCode: 200
 
-  - resource: /city
-    method: POST
-    body: { "Name": "Albuquerque", "Population": 559,374, "State": "New Mexico" }
-    statuscode: 200
+  - Resource: /city
+    Method: POST
+    Body: { "Name": "Albuquerque", "Population": 559,374, "State": "New Mexico" }
+    statusCode: 200
 
-  - resource: /city/1
-    method: PUT
-    body: { "Population": 601,255 }
-    statuscode: 204
+  - Resource: /city/1
+    Method: PUT
+    Body: { "Population": 601,255 }
+    StatusCode: 204
 
-  - resource: /city/1
-    method: DELETE
-    statuscode: 204
+  - Resource: /city/1
+    Method: DELETE
+    StatusCode: 204
 `
 
 // initCmd represents the init command

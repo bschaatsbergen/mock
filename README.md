@@ -35,6 +35,9 @@ Running mock is very easy, by simply running the below command you tell mock to 
 
 ```sh
 ❯ mock serve
+
+📝 using config file: .mock.yaml
+📡 starting mock on :7070, exit to stop
 ```
 
 To bring you up to speed, we allow you to run the below command in order to generate an exampe `.mock.yaml` in the current working directory.

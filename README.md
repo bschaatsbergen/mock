@@ -21,10 +21,11 @@ If you prefer grabbing mock its binaries, download the latest from the the **[Gi
 ### Brew
 
 ```sh
+❯ brew tap bschaatsbergen/mock
 ❯ brew install mock
 ```
 
-### Chocolatey
+### Chocolatey (Not supported yet)
 ```cmd
 ❯ choco install mock
 ```

@@ -37,7 +37,7 @@ Running mock is very easy, by simply running the below command you tell mock to 
 ❯ mock serve
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vulputate leo elit, id pharetra urna hendrerit nec. Integer hendrerit turpis sapien, vel scelerisque risus fringilla ac.
+To bring you up to speed, we allow you to run the below command in order to generate an exampe `.mock.yaml` in the current working directory.
 
 ```sh
 ❯ mock init
@@ -73,4 +73,4 @@ Endpoints:
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

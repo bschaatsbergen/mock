@@ -1,6 +1,7 @@
 package utils
 
 import (
+	"fmt"
 	"io"
 	"log"
 	"net/http"
@@ -23,6 +24,8 @@ func StartServer(conf model.Config, port string) {
 	}
 
 	address := ":" + port
+
+	fmt.Printf("📡 starting mock on %s, exit to stop\n", address)
 
 	log.Fatal(http.ListenAndServe(address, r))
 }

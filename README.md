@@ -10,7 +10,7 @@
 
 ## About mock
 
-Mock allows you to spin up a local http server that serves endpoints you define in a `.mock.yaml` file. Preferably mock is used per project and a `.mock.yaml` file is created at the root of the repository.
+Mock allows you to spin up a local http server based of a `.mock.yaml` file. Preferably mock is used per project and a `.mock.yaml` file is created at the root of a repository.
 
 ## Installation
 

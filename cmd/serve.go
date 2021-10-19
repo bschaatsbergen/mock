@@ -7,6 +7,7 @@ import (
 )
 
 var cfgFile string
+var port string
 
 // serveCmd represents the serve command
 var serveCmd = &cobra.Command{
@@ -21,9 +22,11 @@ The mock config can be passed by using the '-c' flag, otherwise by default from 
 
 func init() {
 	rootCmd.AddCommand(serveCmd)
-	serveCmd.Flags().StringVarP(&cfgFile, "config", "c", "", "specifies the config file (defaults to '.mock.yaml'")
+	serveCmd.Flags().StringVarP(&port, "port", "p", "7070", "binds a given port to mock")
+	serveCmd.Flags().StringVarP(&cfgFile, "config", "c", "", "overwrite the .mock.yaml from the working directory")
 }
 
 func Serve() {
-	utils.ReadMockConfig(cfgFile)
+	conf := utils.ReadMockConfig(cfgFile)
+	utils.StartServer(conf, port)
 }

@@ -35,9 +35,9 @@ func GenerateMockConfig() {
 	if _, err := os.Stat(mockFileName); os.IsNotExist(err) {
 		err := ioutil.WriteFile(mockFileName, []byte(conf), 0755)
 		if err != nil {
-			fmt.Printf("Unable to write file: %v", err)
+			fmt.Printf("unable to write file: %v", err)
 		} else {
-			fmt.Printf("🎉 Generated '.mock.yaml' in: %v\n", dir)
+			fmt.Printf("🎉 generated '.mock.yaml' in: %v\n", dir)
 		}
 	} else {
 		fmt.Printf("'.mock.yaml' file already exists in: %v\n", dir)

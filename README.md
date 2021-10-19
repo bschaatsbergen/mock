@@ -52,7 +52,7 @@ The generated `.mock.yaml` configuration looks as following. It's made up of a l
 Endpoints:
   - Resource: /city/1
     Method: GET
-    Response: '{ Id": 1, "Name": "Albuquerque", "Population": 559.374, "State": "New Mexico" }'
+    Response: '{ "Id": 1, "Name": "Albuquerque", "Population": 559.374, "State": "New Mexico" }'
     StatusCode: 200
 
   - Resource: /city
@@ -62,8 +62,8 @@ Endpoints:
 
   - Resource: /city/1
     Method: PUT
-    Response: '{ "Population": 601.255 }'
-    StatusCode: 204
+    Response: '{ "Name": "Albuquerque", "Population": 601.255, "State": "New Mexico" }'
+    StatusCode: 200
 
   - Resource: /city/1
     Method: DELETE

@@ -12,7 +12,7 @@ Endpoints:
 
   - Resource: /city/1
     Method: PUT
-    Response: '{ "Population": 601.255 }'
+    Response: '{ Id": 1, "Name": "Albuquerque", "Population": 601.255, "State": "New Mexico" }'
     StatusCode: 204
 
   - Resource: /city/1

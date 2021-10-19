@@ -1,6 +1,8 @@
 package utils
 
 import (
+	"io"
+	"log"
 	"net/http"
 
 	"github.com/gorilla/mux"
@@ -12,13 +14,15 @@ func StartServer(conf model.Config, port string) {
 	r := mux.NewRouter()
 
 	for _, endpoint := range conf.Endpoints {
-		r.HandleFunc(endpoint.Resource, func(w http.ResponseWriter, r *http.Request) {
+		route := endpoint
+		r.HandleFunc(route.Resource, func(w http.ResponseWriter, r *http.Request) {
 			w.Header().Set("Content-Type", "application/json")
-			w.Write([]byte(endpoint.Response))
-		}).Methods(endpoint.Method)
+			w.WriteHeader(route.Statuscode)
+			io.WriteString(w, route.Response)
+		}).Methods(route.Method)
 	}
 
 	address := ":" + port
 
-	http.ListenAndServe(address, r)
+	log.Fatal(http.ListenAndServe(address, r))
 }

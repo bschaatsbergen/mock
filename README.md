@@ -71,6 +71,19 @@ Endpoints:
 
 ```
 
+After running `mock serve` you can verify whether the routes are available
+
+```sh
+❯ curl -i -X GET 'http://localhost:7070/city/1'
+HTTP/1.1 200 OK
+Content-Type: application/json
+Date: Tue, 19 Oct 2021 13:25:47 GMT
+Content-Length: 80
+
+{ "Id": 1, "Name": "Albuquerque", "Population": 559.374, "State": "New Mexico" }
+```
+
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

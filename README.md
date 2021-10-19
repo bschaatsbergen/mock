@@ -4,7 +4,7 @@
 <p align="center">
     <a href="https://github.com/bschaatsbergen/mock/releases"><img src="https://img.shields.io/github/downloads/bschaatsbergen/mock/total.svg" alt="GitHub Downloads"></a>
     <a href="https://github.com/bschaatsbergen/mock/releases/latest"><img src="https://img.shields.io/github/release/bschaatsbergen/mock.svg" alt="Latest Release"></a>
-    <a href="https://github.com/bschaatsbergen/mock/blob/master/LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT License"></a>
+    <a href="https://github.com/bschaatsbergen/mock/actions/workflows/go.yaml"><img src="https://img.shields.io/github/workflow/status/bschaatsbergen/mock/Go" alt="Build Status"></a>
     <a href="https://github.com/bschaatsbergen/mock/issues"><img src="https://img.shields.io/badge/contributions-welcome-ff69b4.svg" alt="Contributions Welcome"></a>
 </p>
 

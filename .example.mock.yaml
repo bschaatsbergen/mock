@@ -2,7 +2,7 @@
 Endpoints:
   - Resource: /city/1
     Method: GET
-    Body:
+    Response:
       '[{
         "Id": 1,
         "Name": "Albuquerque",
@@ -13,7 +13,7 @@ Endpoints:
 
   - Resource: /city
     Method: POST
-    Body:
+    Response:
       '[{ 
         "Name": "Albuquerque", 
         "Population": 559, 374, 
@@ -23,7 +23,7 @@ Endpoints:
 
   - Resource: /city/1
     Method: PUT
-    Body: 
+    Response: 
       '[{ 
         "Population": 601, 255 
       }]'

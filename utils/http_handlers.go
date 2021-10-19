@@ -14,7 +14,7 @@ func StartServer(conf model.Config, port string) {
 	for _, endpoint := range conf.Endpoints {
 		r.HandleFunc(endpoint.Resource, func(w http.ResponseWriter, r *http.Request) {
 			w.Header().Set("Content-Type", "application/json")
-			w.Write([]byte(endpoint.Body))
+			w.Write([]byte(endpoint.Response))
 		}).Methods(endpoint.Method)
 	}
 

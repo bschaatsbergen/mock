@@ -9,5 +9,5 @@ type Endpoints struct {
 	Method     string `yaml:"Method"`
 	Statuscode int    `yaml:"StatusCode"`
 	Resource   string `yaml:"Resource"`
-	Body       string `yaml:"Body"`
+	Response   string `yaml:"Response"`
 }

@@ -12,17 +12,17 @@ var conf = `# Example .mock.yaml config
 Endpoints:
   - Resource: /city/1
     Method: GET
-    Body: '{ Id": 1, "Name": "Albuquerque", "Population": 559.374, "State": "New Mexico" }'
+    Response: '{ Id": 1, "Name": "Albuquerque", "Population": 559.374, "State": "New Mexico" }'
     StatusCode: 200
 
   - Resource: /city
     Method: POST
-    Body: '{ "Name": "Albuquerque", "Population": 559.374, "State": "New Mexico" }'
+    Response: '{ "Name": "Albuquerque", "Population": 559.374, "State": "New Mexico" }'
     statusCode: 200
 
   - Resource: /city/1
     Method: PUT
-    Body: '{ "Population": 601.255 }'
+    Response: '{ "Population": 601.255 }'
     StatusCode: 204
 
   - Resource: /city/1
@@ -30,7 +30,7 @@ Endpoints:
     StatusCode: 204
 `
 
-func GenerateMockConfig() {
+func WriteMockConfig() {
 	dir, _ := os.Getwd()
 	if _, err := os.Stat(mockFileName); os.IsNotExist(err) {
 		err := ioutil.WriteFile(mockFileName, []byte(conf), 0755)

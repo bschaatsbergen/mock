@@ -26,7 +26,7 @@ func ReadMockConfig(cfgFile string) model.Config {
 	}
 
 	if err := viper.ReadInConfig(); err == nil {
-		fmt.Println("📝 using config file:", viper.ConfigFileUsed())
+		fmt.Println("📝 Using config file:", viper.ConfigFileUsed())
 	} else {
 		fmt.Println(err)
 		os.Exit(1) //FIXME: This should be handled by wrapping the command with RunE

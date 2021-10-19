@@ -31,7 +31,7 @@ If you prefer grabbing mock its binaries, download the latest from the the **[Gi
 
 ## Usage
 
-Running mock is very easy, by simply running the below command you tell mock to translate the `.mock.yaml` in the current working directory to an http server that by default runs under port 7070.
+Running mock is very easy, by simply running the below command you tell mock to translate the `.mock.yaml` in the current working directory to an http server that by default runs under port 7070. Use the `-p` flag to change the default port.
 
 ```sh
 ❯ mock serve

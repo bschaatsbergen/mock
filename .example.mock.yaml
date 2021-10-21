@@ -1,4 +1,5 @@
 # Example .mock.yaml config
+Port: 8089
 Endpoints:
   - Resource: /city/1
     Method: GET

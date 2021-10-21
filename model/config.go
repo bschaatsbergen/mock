@@ -1,6 +1,7 @@
 package model
 
 type Config struct {
+	Port      string      `yaml:"Port"`
 	Endpoints []Endpoints `yaml:"Endpoints"`
 }
 

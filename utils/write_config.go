@@ -8,7 +8,8 @@ import (
 
 const mockFileName = ".mock.yaml"
 
-var conf = `# Example .mock.yaml config
+var conf = `#Example .mock.yaml config
+#Port: 7071 #Optional, to overwrite the default port
 Endpoints:
   - Resource: /city/1
     Method: GET
